@@ -1,10 +1,14 @@
 
 import './App.css';
-import Navbar from './components/NavBar.js'
+import Navbar from './components/Navbar/NavBar.js';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
 
 function App() {
   return (
+    <div className='App'>
     <Navbar/>
+    <ItemListContainer greenting='React Store'/>
+    </div>
   );
 }
 

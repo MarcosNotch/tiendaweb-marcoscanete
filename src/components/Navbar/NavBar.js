@@ -1,4 +1,7 @@
 import "./NavBar.css";
+import CarWidget from "../CartWidget/CartWidget";
+
+
 
 const NavBar = () => {
     return (
@@ -27,9 +30,7 @@ const NavBar = () => {
 
                 <div>
 
-                    <div className="cart-shop-icon-container">
-                        <img src={"images/cart-shop-icon.png"} alt="imagenCarrito"/>
-                    </div>
+                   <CarWidget/>
 
                     <div>
                         

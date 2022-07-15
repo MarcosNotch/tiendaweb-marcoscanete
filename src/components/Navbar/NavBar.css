@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
+
+    background-color: rgb(175, 175, 175);
 }
 
 
@@ -22,13 +22,4 @@ ul {
 .contenedor-logo img{
   height: 70px;
   width: 70px;
-}
-
-.cart-shop-icon-container img{
-  height: 30px;
-  width: 30px;
-}
-
-.cart-shop-icon-container{
-  margin-right: 50px;
 }
