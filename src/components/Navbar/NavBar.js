@@ -19,9 +19,9 @@ const NavBar = () => {
 
                     <ul>
                         
-                        <li>Categorias</li>
-                        <li>Zapatillas</li>
-                        <li>Marcas</li>
+                        <li>Notebooks</li>
+                        <li>Monitores</li>
+                        <li>Placas de Video</li>
                         <li>Outlet</li>
 
                     </ul>

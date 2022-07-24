@@ -3,9 +3,12 @@
     justify-content: space-between;
     align-items: center;
 
-    background-color: rgb(175, 175, 175);
+    background-color: #1e3f57;
 }
 
+li{
+  color: white;
+}
 
 ul {
     list-style-type: none;

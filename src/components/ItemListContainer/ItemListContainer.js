@@ -1,22 +1,36 @@
-import ItemCount from "../ItemCount/ItemCount";
-import {useState} from 'react';
+import { getProducts } from "../../asyncMock";
+import ItemList from "../ItemList/ItemList";
+import {useState, useEffect} from "react";
+import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 
 const ItemListContainer = ({greenting}) => {
-    
-    let [stock, setStock] = useState(20)
 
+    const [productos, setProductos] = useState([]);
 
-    const onAdd = (cantidad) => {
-        setStock(stock - cantidad) 
-        console.log("cantidad de items agregados " + cantidad)    
-        console.log(stock)
+    let [loaded, setLoaded] = useState(false)
+
+    useEffect(() => {
+        getProducts().then((response) => {
+            setProductos(response);
+           
+        }).catch(error =>{
+            console.log(error)
+        }).finally(() => {
+            setLoaded(true);
+        })
+    }, [])
+
+    if(!loaded){
+        return(
+            <LoadingAnimation/>
+        )
     }
+
 
     return (
         <div>
             <h1>{greenting}</h1>
-            <p>Stock disponible {stock}</p>
-            <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
+            <ItemList products={productos}/>
         </div>
     )
 
