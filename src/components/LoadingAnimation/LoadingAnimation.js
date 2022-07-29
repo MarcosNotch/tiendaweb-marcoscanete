@@ -3,10 +3,10 @@ import "./LoadingAnimation.css"
 const LoadingAnimation = () => {
 
     return (
-        <div class="loader">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+        <div className="loader">
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
         </div>
     )
 

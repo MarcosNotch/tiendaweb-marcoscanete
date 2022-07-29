@@ -7,7 +7,7 @@ const products = [
         category: 'celular', 
         img:'https://www.apple.com/newsroom/images/product/iphone/standard/Apple_announce-iphone12pro_10132020.jpg.og.jpg?202108061040', 
         stock: 25, 
-        description:'Descripcion de Iphone 12',
+        description:'Esta Iphone es la compañera ideal, con capacidad de sobra para cada una de tus actividades. El diseño delgado, compacto y portátil, con facilidad para sostener en una mano, lo convierte en una combinación perfecta de rendimiento y versatilidad.',
         shipping: 'Gratis'
     },
     { id: '2', name: 'samsung s21', price: 800, category: 'celular', img:'https://cdn.pocket-lint.com/r/s/1200x630/assets/images/155378-phones-review-hands-on-samsung-galaxy-s21-ultra-image1-luae09ici4.JPG', stock: 16, description:'Descripcion de Samsung s21',shipping: 'Gratis'},
@@ -21,6 +21,17 @@ const products = [
         return (new Promise((resolve) =>{
             setTimeout(() => {
                 resolve(products)
+            }, 3000)
+           
+        })) 
+    }
+
+
+    export const getItem = () => {
+        
+        return (new Promise((resolve) =>{
+            setTimeout(() => {
+                resolve(products[0])
             }, 3000)
            
         })) 

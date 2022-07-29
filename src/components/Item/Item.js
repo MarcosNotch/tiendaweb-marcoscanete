@@ -13,9 +13,7 @@ const Item = ({product}) => {
                     <p>{product.name}</p>
                 </div>
                 <div className='precio-container'>
-                    <div className='precio'> 
-                        <p>${product.price}</p>
-                    </div>
+                
                     <div className='envio'>
                         <p>Envio {product.shipping}</p>
                     </div>
