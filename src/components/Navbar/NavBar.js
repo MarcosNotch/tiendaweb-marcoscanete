@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import CarWidget from "../CartWidget/CartWidget";
-
+import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
@@ -9,20 +9,29 @@ const NavBar = () => {
 
             <div className="navbar">
 
-                <div className='contenedor-logo'>
-
-                    <img src={'images/logo192.png'} alt="Logo"/>
-                
-                </div>
+              
+                    <div className='contenedor-logo'>
+                        <Link to={"/"}>
+                        <img src={'images/logo192.png'} alt="Logo"/>
+                        </Link>
+                    </div>
+              
+              
 
                 <div>
 
                     <ul>
                         
-                        <li>Notebooks</li>
-                        <li>Monitores</li>
-                        <li>Placas de Video</li>
-                        <li>Outlet</li>
+                        <li>
+                            <Link to={`/category/monitor`}>Notebooks</Link>
+                        </li>
+                        <li>
+                            <Link to={`/category/celular`}>Celulares</Link>
+                        </li>
+                        <li>
+                            <Link to={`/category/tablet`}>Tablets</Link>
+                        </li>
+                 
 
                     </ul>
                 

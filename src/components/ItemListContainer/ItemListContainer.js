@@ -1,7 +1,8 @@
-import { getProducts } from "../../asyncMock";
+import { getProducts, getProductsByCategoryID } from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
 import {useState, useEffect} from "react";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({greenting}) => {
 
@@ -9,16 +10,23 @@ const ItemListContainer = ({greenting}) => {
 
     let [loaded, setLoaded] = useState(false)
 
+    let {categoryID} = useParams()
+
+    let traerProductos = categoryID ? getProductsByCategoryID : getProducts;
+
     useEffect(() => {
-        getProducts().then((response) => {
-            setProductos(response);
-           
-        }).catch(error =>{
-            console.log(error)
-        }).finally(() => {
-            setLoaded(true);
-        })
-    }, [])
+
+        traerProductos(categoryID).then((response) => {
+                setProductos(response);
+            }).catch(error =>{
+                console.log(error)
+            }).finally(() => {
+                setLoaded(true);
+            })
+
+
+  
+    }, [categoryID])
 
     if(!loaded){
         return(

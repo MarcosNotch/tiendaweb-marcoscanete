@@ -3,14 +3,22 @@ import './App.css';
 import Navbar from './components/Navbar/NavBar.js';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Switch, Routes, Route } from 'react-router-dom' 
 
 function App() {
   return (
-    <div className='App'>
+    <BrowserRouter>
+        <div className='App'>
       <Navbar/>
-      <ItemListContainer greenting='React Store'/>  
-      <ItemDetailContainer />
+      <Routes>
+        <Route path='/' element={<ItemListContainer greenting='React Store'/>}/>
+        <Route path='/category/:categoryID' element={<ItemListContainer greenting='Estamos filtrando'/>} />
+        <Route path='/itemDetail/:productID' element={<ItemDetailContainer />} />
+      </Routes>
+
     </div>
+    </BrowserRouter>
+
   );
 }
 
