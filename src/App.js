@@ -11,7 +11,7 @@ function App() {
         <div className='App'>
       <Navbar/>
       <Routes>
-        <Route path='/' element={<ItemListContainer greenting='React Store'/>}/>
+        <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/category/:categoryID' element={<ItemListContainer greenting='Estamos filtrando'/>} />
         <Route path='/itemDetail/:productID' element={<ItemDetailContainer />} />
       </Routes>

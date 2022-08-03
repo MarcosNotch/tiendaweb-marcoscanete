@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background-color: #1e3f57;
+    height: 100px;
+    background-color: #fff159;
 }
 
 li{
@@ -23,6 +23,12 @@ ul {
 }
 
 .contenedor-logo img{
-  height: 70px;
-  width: 70px;
+  height: 34px;
+  width: 134px;
+  margin-left: 20px;
+  }
+
+a{
+  text-decoration: none;
+  color : rgba(51,51,51,.6);
 }

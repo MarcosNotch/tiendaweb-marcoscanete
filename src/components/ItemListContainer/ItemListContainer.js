@@ -3,6 +3,8 @@ import ItemList from "../ItemList/ItemList";
 import {useState, useEffect} from "react";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 import { useParams } from "react-router-dom";
+import Carusel from "../Carrusel/Carrusel.js";
+import './ItemListContainer.css'
 
 const ItemListContainer = ({greenting}) => {
 
@@ -38,6 +40,10 @@ const ItemListContainer = ({greenting}) => {
     return (
         <div>
             <h1>{greenting}</h1>
+            <div className="carrusel-container">
+                <Carusel/>
+            </div>
+            
             <ItemList products={productos}/>
         </div>
     )
