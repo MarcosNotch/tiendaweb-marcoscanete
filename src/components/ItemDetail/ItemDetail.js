@@ -1,6 +1,21 @@
 import "./ItemDetail.css"
+import ItemCount from "../ItemCount/ItemCount.js";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const ItemDetail = ({id, name, price, category, img, stock, description, shipping}) => {
+
+    let [vStock, setStock] = useState(stock);
+    let [mostrar, setMostrar] = useState(false)
+
+ 
+    
+    function onAdd(quantityToAdd){
+       setStock(stock - quantityToAdd)
+       setMostrar(true) 
+    }
+
 
     return (
         <div className="item-detail">
@@ -27,14 +42,14 @@ const ItemDetail = ({id, name, price, category, img, stock, description, shippin
                         <p>Envio: {shipping}</p>
                     </div>
                     <div>
-                        <p>{stock} unidades disponibles</p>
+                        <p>{vStock} unidades disponibles</p>
                     </div>
                     <div className="button-container">
                         <div>
                             <button>COMPRAR</button>
                         </div>
                         <div>
-                            <button>Agregar al Carrito</button>
+                          {mostrar? <Link to="/cart">Finalizar Compra</Link> : <ItemCount stock={vStock} initial={1} onAdd={onAdd}/>}  
                         </div>
                     </div>
                 </div>

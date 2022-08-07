@@ -7,24 +7,32 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
 
     let {productID} = useParams();
-
+    let [mostrar, setMostrar] = useState(false)
     const [item, setItem] = useState("");
 
     useEffect(() =>{ getItem(productID).then((response) => {
 
 
         setItem(response)
-
+        setMostrar(true)
     }).catch(error =>{
         console.log(error)
     })
-}, [])
+}, [productID])
 
-    return (
-        <div className="item-detail-container">
+
+    console.log("aca 2 veces")
+
+
+    if(mostrar){
+        return (
+            <div className="item-detail-container">
             <ItemDetail {...item} />
         </div>
-    )
+        )
+    }
+
+  
 
 }
 
