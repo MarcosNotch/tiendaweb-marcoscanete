@@ -21,9 +21,6 @@ const ItemDetailContainer = () => {
 }, [productID])
 
 
-    console.log("aca 2 veces")
-
-
     if(mostrar){
         return (
             <div className="item-detail-container">

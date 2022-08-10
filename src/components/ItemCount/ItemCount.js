@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+
 
 const ItemCount = ({stock, initial, onAdd}) => {
     let [valor, setValor] = useState(initial)
     
-
     const sumar = () => {
         if(stock > valor){
             setValor(valor + 1)
