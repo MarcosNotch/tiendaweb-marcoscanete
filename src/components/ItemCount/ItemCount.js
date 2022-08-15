@@ -1,21 +1,30 @@
-import React, {useState, useContext} from "react";
+import React, {useState} from "react";
 
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd, sumarPrecio, mostrarBoton}) => {
     let [valor, setValor] = useState(initial)
     
     const sumar = () => {
         if(stock > valor){
-            setValor(valor + 1)
-           
+        
+            setValor(valor = valor + 1)
+
+            if(!mostrarBoton){
+          
+                sumarPrecio(valor)
+            }
         }
-  
+      
     }
 
     const restar = () => {
-        if(initial < valor){
-            setValor(valor - 1)
+        if(1 < valor){
+            setValor(valor = valor - 1)
+            if(!mostrarBoton){
+                sumarPrecio(valor)
+            }
         }
+       
     }
 
     const guardar = (e) => {
@@ -35,7 +44,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
              <button onClick={restar}>-</button>
              <input  value={valor} onChange={guardar}/>
              <button onClick={sumar}>+</button>
-             <button onClick={agregar}>Agregar Al Carrito</button>
+             {mostrarBoton && <button onClick={agregar}>Agregar Al Carrito</button>}
         </div>
     
 

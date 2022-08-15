@@ -1,20 +1,11 @@
-.imagen-detalle{
-    max-width:100%;
-    max-height:100%;
-}
 
-.container-imagen-detalle{
-    object-fit: contain;
-    width: 400px;
-    height: auto;
-    cursor: zoom-in;
+
+.left-container{
     display: flex;
-    flex-direction: column;
 }
 
 .item-detail{
     width: 1000px   ;
-   
     display: flex;
     align-self: center;
     justify-content: space-around;
