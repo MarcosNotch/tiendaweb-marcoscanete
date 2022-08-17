@@ -15,7 +15,7 @@ const products = [
         name: 'monitor',
         price: 800,
         category: 'Monitor gamer Samsung F24T35 led 24 " azul y gris oscuro 100V/240V',
-        imgs:[{id:'1', img: 'https://http2.mlstatic.com/D_NQ_NP_973781-MLA48131216539_112021-O.webp'}, {id:'2', img:'https://http2.mlstatic.com/D_Q_NP_816471-MLA48131292347_112021-R.webp'}, {id:'3', img:'https://http2.mlstatic.com/D_Q_NP_905728-MLA48131292348_112021-R.webp'}, {id:'4', img:'https://http2.mlstatic.com/D_Q_NP_642347-MLA48131245448_112021-R.webp'}],
+        imgs:[{id:'1', img: 'https://http2.mlstatic.com/D_NQ_NP_973781-MLA48131216539_112021-O.webp' }, {id:'2', img:'https://http2.mlstatic.com/D_Q_NP_816471-MLA48131292347_112021-R.webp'}, {id:'3', img:'https://http2.mlstatic.com/D_Q_NP_905728-MLA48131292348_112021-R.webp'}, {id:'4', img:'https://http2.mlstatic.com/D_Q_NP_642347-MLA48131245448_112021-R.webp'}],
         stock: 16,
         description:'Descripcion de Samsung s21',
         shipping: 'Gratis'

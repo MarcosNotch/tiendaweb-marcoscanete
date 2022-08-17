@@ -11,9 +11,7 @@ const CartListContainer = () => {
 return (
     <div className="cart-list-container">
         <CartList carrito={carrito}/>
-        <div>
-            <button>Finalizar Compra</button>
-        </div>
+        
     </div>
 )
 

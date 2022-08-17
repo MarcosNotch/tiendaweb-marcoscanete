@@ -18,6 +18,7 @@ const CartItem = ({product}) => {
         setPrecio(price * cantidad)
     }
 
+
     return (
         <div className='card-item-container'>
             <div className='container-top'>

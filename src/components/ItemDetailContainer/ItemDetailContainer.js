@@ -3,29 +3,47 @@ import { getItem } from "../../asyncMock";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.css"
 import { useParams } from "react-router-dom";
+import { getDoc, doc, getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../../services/firebase";
 
 const ItemDetailContainer = () => {
 
     let {productID} = useParams();
     let [mostrar, setMostrar] = useState(false)
-    const [item, setItem] = useState("");
+    let [item, setItem] = useState('Valor inicial');
 
-    useEffect(() =>{ getItem(productID).then((response) => {
-
-
-        setItem(response)
+    async function obtenerProducto(productID){
+        // obtengo el producto
+        let response = await getDoc(doc(db, 'products', productID));
+        const product = {id: productID, ...response.data()}
+        // obtengo todas las imagenes del producto
+        let collectionRef = query(collection(db, 'imageProducts'), where('product', '==', productID))
+    
+        let response2 = await getDocs(collectionRef)
+      
+        const imgs = response2.docs.map(img => {
+            return {id: img.id, ...img.data()}
+        })
+        setItem({product, imgs})
         setMostrar(true)
-    }).catch(error =>{
-        console.log(error)
-    })
-}, [productID])
+    }
+    
+    useEffect(() => {
+        try{
+            obtenerProducto(productID)
+        }catch(e){
+            console.log(e)
+        }
+        
+    }, [productID])
 
 
     if(mostrar){
+ 
         return (
             <div className="item-detail-container">
-            <ItemDetail {...item} />
-        </div>
+                <ItemDetail item={item} />
+            </div>
         )
     }
 

@@ -8,7 +8,10 @@ import MiniPicture from "../MiniPicture/MiniPicture";
 import MainPictureDetail from "../MainPictureDetail/MainPictureDetail";
 import LeftDetail from "./LetftDetail/LeftDetail";
 
-const ItemDetail = ({id, name, price, category, imgs, stock, description, shipping}) => {
+const ItemDetail = ({item}) => {
+
+    let {id, name, price, category, stock, description, shipping} = item.product;
+    let imgs = item.imgs
 
     let [vStock, setStock] = useState(stock);
     let [mostrar, setMostrar] = useState(false)
@@ -24,9 +27,6 @@ const ItemDetail = ({id, name, price, category, imgs, stock, description, shippi
        setMostrar(true)
        agregarAlCarrito({id, name, price, quantityToAdd, imgs, vStock})
     }
-
-
-    console.log('se actualiza todo')
 
     return (
         <div className="item-detail">

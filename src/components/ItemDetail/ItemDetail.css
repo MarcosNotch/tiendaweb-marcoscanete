@@ -2,6 +2,8 @@
 
 .left-container{
     display: flex;
+    width: 600px;
+    height: 400px;
 }
 
 .item-detail{

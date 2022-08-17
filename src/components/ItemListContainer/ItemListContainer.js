@@ -5,6 +5,8 @@ import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
 import { useParams } from "react-router-dom";
 import Carusel from "../Carrusel/Carrusel.js";
 import './ItemListContainer.css'
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../../services/firebase";
 
 const ItemListContainer = ({greenting}) => {
 
@@ -14,12 +16,16 @@ const ItemListContainer = ({greenting}) => {
 
     let {categoryID} = useParams()
 
-    let traerProductos = categoryID ? getProductsByCategoryID : getProducts;
-
     useEffect(() => {
 
-        traerProductos(categoryID).then((response) => {
-                setProductos(response);
+        const collectionRef = !categoryID ? collection(db, 'products') : query(collection(db, 'products'), where('category', '==', categoryID))
+
+
+        getDocs(collectionRef).then((response) => {
+                const products = response.docs.map(doc => {
+                    return {id: doc.id, ...doc.data()}
+                })
+                setProductos(products)
             }).catch(error =>{
                 console.log(error)
             }).finally(() => {

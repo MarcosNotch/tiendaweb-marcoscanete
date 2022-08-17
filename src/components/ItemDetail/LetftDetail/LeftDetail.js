@@ -5,7 +5,6 @@ import { useState } from "react"
 
 const LeftDetail = ({imgs}) => {
 
-    
 function cambiarImagenPrincipal(id){
     setimagenPrincipal(imgs.find(e => e.id === id).img)
 }
