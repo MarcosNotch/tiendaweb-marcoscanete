@@ -1,8 +1,10 @@
 import React, {useState} from "react";
-
+import './ItemCount.css'
 
 const ItemCount = ({stock, initial, onAdd, sumarPrecio, mostrarBoton}) => {
     let [valor, setValor] = useState(initial)
+
+
     
     const sumar = () => {
         if(stock > valor){
@@ -33,7 +35,7 @@ const ItemCount = ({stock, initial, onAdd, sumarPrecio, mostrarBoton}) => {
     } 
 
     const agregar = () =>{
-        if (valor > initial){
+        if (valor >= initial){
             onAdd(valor)
             setValor(initial)
         } 
@@ -41,13 +43,15 @@ const ItemCount = ({stock, initial, onAdd, sumarPrecio, mostrarBoton}) => {
 
     return (
         <div>
-             <button onClick={restar}>-</button>
-             <input  value={valor} onChange={guardar}/>
-             <button onClick={sumar}>+</button>
-             {mostrarBoton && <button onClick={agregar}>Agregar Al Carrito</button>}
-        </div>
-    
 
+        <div className="item-count-container">
+             <button className="boton" onClick={restar}>-</button>
+             <input className="input-count" value={valor} onChange={guardar}/>
+             <button className="boton" onClick={sumar}>+</button>
+          
+        </div>
+        {mostrarBoton && <button onClick={agregar}>Agregar Al Carrito</button>}
+        </div>
     )
 }
 

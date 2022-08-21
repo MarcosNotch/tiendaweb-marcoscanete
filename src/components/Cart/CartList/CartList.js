@@ -19,7 +19,7 @@ const CartList = ({carrito}) => {
             <CartItem key={p.id} product={p}/>
             )}
             <div>
-            <button>Finalizar Compra</button>
+            <button ><Link to={'/finishOrder'}>Finalizar Compra</Link></button>
         </div>
     </div>
     )

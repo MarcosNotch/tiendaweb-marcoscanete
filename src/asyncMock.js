@@ -1,3 +1,5 @@
+import { getDoc, doc, getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "./services/firebase/index.js";
 
 const products = [
     { 
@@ -65,3 +67,13 @@ const products = [
                 resolve(products.find(e => e.id === id))
         })) 
     }
+
+
+    export async function   obtenerProducto(productID){
+        // obtengo el producto
+        let response = await getDoc(doc(db, 'products', productID));
+        const product = {id: productID, ...response.data()}
+        // obtengo todas las imagenes del producto
+        return product
+    }
+    

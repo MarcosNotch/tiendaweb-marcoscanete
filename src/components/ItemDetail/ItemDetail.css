@@ -1,4 +1,9 @@
 
+.mini-container{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 
 .left-container{
     display: flex;

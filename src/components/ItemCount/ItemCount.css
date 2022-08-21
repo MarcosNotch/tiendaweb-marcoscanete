@@ -1,0 +1,22 @@
+.input-count{
+    width: 47px;
+    text-align: center;
+    border: none;
+}
+
+input:focus {
+    outline: none
+  }
+
+
+.boton{
+    background-color: white;
+    border: none;
+    color:#3483fa;
+    font-size: 24px;
+}
+
+.item-count-container{
+    border: 1px solid rgb(216, 216, 216);
+    width: 120px;
+}

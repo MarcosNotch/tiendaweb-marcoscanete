@@ -42,16 +42,38 @@ export const CartContext = ({children}) => {
         setCarrito(carrito.filter(e => e.id !== itemId))
     }
 
-
+    function getMontoTotal(){
+        let montoTotal = 0;
+        carrito.forEach(
+            e => montoTotal += e.price
+        )
+        return montoTotal
+    }
 
     function isInCart(producto){
         let resultado =carrito.some(e => e.id === producto.id)
        return resultado
     }
 
+    function changeQuantity(id, cantidad){
+        let carritoMod = carrito.map(prod => {
+            if(prod.id === id){
+                const cambiado = {
+                    ...prod, quantityToAdd: cantidad
+                }
+                return cambiado
+            }else{
+                return prod
+            }
+        })
+        setCarrito(carritoMod)
+    }
+
+
+
     return (
         
-        <Context.Provider value={{carrito, agregarAlCarrito, cantidadCarrito, removeItem, clear}}>
+        <Context.Provider value={{carrito, agregarAlCarrito, cantidadCarrito, removeItem, clear, getMontoTotal,changeQuantity}}>
             {children}
         </Context.Provider>
     )
