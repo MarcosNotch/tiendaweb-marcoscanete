@@ -6,3 +6,22 @@
     
 
 }
+
+.payment-method-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+.payment-method-principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    width: 1307px;
+
+}

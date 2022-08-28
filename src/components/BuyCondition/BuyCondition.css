@@ -1,0 +1,12 @@
+.conditions-text{
+    display: flex;
+}
+
+.blue-text{
+    color: #3483fa;
+}
+
+.conditions-text{
+    width: 100px;
+    height: auto;
+}

@@ -1,8 +1,6 @@
 import "./NavBar.css";
 import CarWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { Context } from "../../context/CartContext";
 
 const NavBar = () => {
 
@@ -50,11 +48,6 @@ const NavBar = () => {
             </div>
         
         </nav>
-
-
     )
-
-
-
 }
 export default NavBar;

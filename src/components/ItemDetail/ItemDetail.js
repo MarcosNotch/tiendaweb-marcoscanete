@@ -4,13 +4,12 @@ import { useState, useContext} from "react";
 import { Link } from "react-router-dom";
 
 import { Context } from "../../context/CartContext";
-import MiniPicture from "../MiniPicture/MiniPicture";
-import MainPictureDetail from "../MainPictureDetail/MainPictureDetail";
+import BuyCondition from "../BuyCondition/BuyCondition";
 import LeftDetail from "./LetftDetail/LeftDetail";
 
 const ItemDetail = ({item}) => {
 
-    let {id, name, price, category, stock, description, shipping} = item.product;
+    let {id, name, price, stock, shipping} = item.product;
     let imgs = item.imgs
 
     let [vStock, setStock] = useState(stock);
@@ -34,11 +33,10 @@ const ItemDetail = ({item}) => {
             <div className="detail">
                 <div className="detail-left">
                     <div>
-                        <h3>{name}</h3>
+                        <h3 className="nombre-producto">{name}</h3>
                     </div>
-                  
                     <div>
-                        <p>${price}</p>
+                        <p className="precio-producto">${price}</p>
                     </div>
                 </div>
                 <div className="detail-rigth">
@@ -49,8 +47,14 @@ const ItemDetail = ({item}) => {
                         <p>{vStock} unidades disponibles</p>
                     </div>
                     <div className="button-container">
-                        <div>
-                            <button>COMPRAR</button>
+                        <div className="button-container2">
+                            <button className="comprar-ahora">Comprar ahora</button>
+                        </div>
+                        <div className="buy-condition">
+                          <BuyCondition />
+                          <BuyCondition />
+                          <BuyCondition />
+                          <BuyCondition />
                         </div>
                         <div>
                           {mostrar? <Link to="/cart">Finalizar Compra</Link> : <ItemCount stock={vStock} initial={cantidadInicial} onAdd={onAdd} mostrarBoton={true}/>}  

@@ -13,13 +13,7 @@ const Item = ({product}) => {
                     <img src={product.img} alt="imagen del producto"/>
                 </div>
                 <div className="nombre-container">
-                    <p>{product.name}</p>
-                </div>
-                <div className='precio-container'>
-                
-                    <div className='envio'>
-                        <p>Envio {product.shipping}</p>
-                    </div>
+                    <p>$ {product.price}</p>
                 </div>
             </div>
             </Link>

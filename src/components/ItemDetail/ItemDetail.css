@@ -16,14 +16,21 @@
     display: flex;
     align-self: center;
     justify-content: space-around;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
+    max-width: 1184px;
 }
 
 .detail{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.buy-condition{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
 .detail-left{
@@ -34,6 +41,7 @@
     width: auto;
     height: 100%;
     width: 250px;
+    min-width: 325px;
 }
 
 .detail-rigth{
@@ -42,7 +50,10 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    width: 250px;
+    min-width: 325px;
+    font-size: 14px;
+    padding: 25px 16px;
+    border: 1px solid rgba(0,0,0,.1);
 }
 
 .button-container{
@@ -50,5 +61,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
+.button-container2{
+    width: 100%;
+}
+
+.nombre-producto{
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.18;
+    word-break: break-word;
+}
+
+.precio-producto{
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: normal;
+    font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
+
+
+.comprar-ahora{
+    background-color: #3483fa;
+    color: white;
+    border-radius: 6px;
+    border-color: transparent;
+    font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 50px;
+}

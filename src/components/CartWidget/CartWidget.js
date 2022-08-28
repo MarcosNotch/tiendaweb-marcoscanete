@@ -1,5 +1,5 @@
 import './CartWidget.css'
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Context } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 
@@ -10,9 +10,6 @@ const CarWidget = () => {
     const {cantidadCarrito} = useContext(Context)
     let cantidad = cantidadCarrito()
 
-    if(!cantidad){
-        return 
-    }
 
     return (
         <Link to={'/cart'}>
@@ -22,8 +19,6 @@ const CarWidget = () => {
             </div>
         </Link>
     )
-
-
 }
 
 

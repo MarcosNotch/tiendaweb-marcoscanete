@@ -1,0 +1,32 @@
+.payment-method{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}   
+
+
+.payment-subtitle{
+    color: #3483fa;
+    font-size: 14px;
+}
+
+.payment-title{
+    font-size: 18px;
+}
+
+.titles-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    margin: 0px !important; 
+}
+
+
+.titles-container div{ 
+    align-self: flex-start;
+}

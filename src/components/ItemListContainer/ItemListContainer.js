@@ -1,4 +1,3 @@
-import { getProducts, getProductsByCategoryID } from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
 import {useState, useEffect} from "react";
 import LoadingAnimation from "../LoadingAnimation/LoadingAnimation";
@@ -7,6 +6,7 @@ import Carusel from "../Carrusel/Carrusel.js";
 import './ItemListContainer.css'
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../services/firebase";
+import PaymentInformation from "../PaymentInformation/PaymentInformation";
 
 const ItemListContainer = ({greenting}) => {
 
@@ -33,6 +33,13 @@ const ItemListContainer = ({greenting}) => {
             })
 
 
+
+            fetch('http://localhost:8080/usuario')
+            .then(response => response.json())
+            .then(data => console.log(data));
+
+
+
   
     }, [categoryID])
 
@@ -44,18 +51,23 @@ const ItemListContainer = ({greenting}) => {
 
 
     return (
+
         <div>
             <h1>{greenting}</h1>
             <div className="carrusel-container">
                 <Carusel/>
             </div>
-            
+            <div className="payment-method-container">
+                <div className="payment-method-principal">
+                    <PaymentInformation img={"https://http2.mlstatic.com/storage/homes-korriban/assets/images/payments/credit-card.svg"} desc={'Tarjeta De Credito'} altDesc={'Ver promociones bancarias'}/>
+                    <PaymentInformation img={"https://http2.mlstatic.com/storage/homes-korriban/assets/images/payments/debit-card.svg"} desc={'Tarjeta De Debito'} altDesc={'Ver mas'}/>
+                    <PaymentInformation img={"https://http2.mlstatic.com/storage/homes-korriban/assets/images/payments/mercado-creditsv2.svg"} desc={'Cuotas Sin Tarjeta'} altDesc={'Conoce Mercado Credito'}/>
+                    <PaymentInformation img={"https://http2.mlstatic.com/storage/homes-korriban/assets/images/payments/payment-agreement.svg"} desc={'Efectivo'} altDesc={'Ver mas'}/>
+                </div>
+            </div>
             <ItemList products={productos}/>
         </div>
     )
-
-
-
 }
 
 
