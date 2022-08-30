@@ -47,14 +47,12 @@ const ItemDetail = ({item}) => {
                         <p>{vStock} unidades disponibles</p>
                     </div>
                     <div className="button-container">
-                        <div className="button-container2">
-                            <button className="comprar-ahora">Comprar ahora</button>
-                        </div>
+                        
                         <div className="buy-condition">
-                          <BuyCondition />
-                          <BuyCondition />
-                          <BuyCondition />
-                          <BuyCondition />
+                          <BuyCondition logo={"fa-solid fa-arrow-rotate-left"} blueWords={"Devolucion gratis. "} grayWords={"Tenes 30 dias desde que lo recibis"}/>
+                          <BuyCondition logo={"fa-solid fa-shield-heart"} blueWords={"Compra Protegida. "} grayWords={"Recibí el producto que esperabas o te devolvemos tu dinero."}/>
+                          <BuyCondition  logo={"fa-solid fa-trophy"} blueWords={"Mercado Puntos. "} grayWords={"Sumas 914 puntos"}/>
+                          <BuyCondition logo={"fa-solid fa-award"} blueWords={"Devolucion gratis. "} grayWords={"Tenes 30 dias desde que lo recibis"}/>
                         </div>
                         <div>
                           {mostrar? <Link to="/cart">Finalizar Compra</Link> : <ItemCount stock={vStock} initial={cantidadInicial} onAdd={onAdd} mostrarBoton={true}/>}  
@@ -64,7 +62,6 @@ const ItemDetail = ({item}) => {
             </div>
         </div>
     )
-
 } 
 
 export default ItemDetail;

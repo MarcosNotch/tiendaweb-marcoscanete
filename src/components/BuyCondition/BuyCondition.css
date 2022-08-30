@@ -4,9 +4,14 @@
 
 .blue-text{
     color: #3483fa;
+    margin-left: 50px;
 }
 
 .conditions-text{
-    width: 100px;
+    width: 250px;
     height: auto;
+}
+
+p{
+    display: inline;
 }

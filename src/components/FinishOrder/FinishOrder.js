@@ -10,17 +10,37 @@ const FinishOrder = () => {
     const [abrirPopup, setAbrirPopup] = useState(false)
     const [completado, setCompletado] = useState(false)
     const [ordenId, setOrdenId] = useState('')
+    const [correoMalIngresado, setCorreoMalIngresado] = useState(false)
+
 
     const apellido = useRef(null);
     const nombre = useRef(null)
     const telefono = useRef(null)
     const email = useRef(null)
+    const emailConfirmation = useRef(null)
     const direccion = useRef(null)
 
 
     const {carrito, getMontoTotal, clear} = useContext(Context)
 
+    function validateOrder(){
+
+        if (email.current.value === emailConfirmation.current.value){
+            setCorreoMalIngresado(false)
+            createOrder();
+        }else{
+            setCorreoMalIngresado(true)
+        }
+
+    }
+
+
     const createOrder = async () => {
+
+
+
+
+
         try {
             console.log(nombre.current.value)
             const montoFinal = getMontoTotal();
@@ -95,10 +115,13 @@ const FinishOrder = () => {
             <input ref={direccion}></input>
             <h3>Telefono</h3>
             <input ref={telefono}></input>
+            {correoMalIngresado && <div class="alert alert-danger" role="alert">Los correos ingresados no coinciden</div>}
             <h3>Correo electronico</h3>
             <input ref={email}></input>
+            <h3>Confirma tu correo</h3>
+            <input ref={emailConfirmation}></input>
 
-            <button onClick={createOrder}>Finalizar Compra</button>
+            <button onClick={validateOrder}>Finalizar Compra</button>
 
             <PopUp open={abrirPopup} onClose={() => setAbrirPopup(false)} completado={completado} ordenId={ordenId}/>
 

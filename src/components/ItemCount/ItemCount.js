@@ -50,7 +50,12 @@ const ItemCount = ({stock, initial, onAdd, sumarPrecio, mostrarBoton}) => {
              <button className="boton" onClick={sumar}>+</button>
           
         </div>
-        {mostrarBoton && <button onClick={agregar}>Agregar Al Carrito</button>}
+
+        <div className="button-container2">
+            {mostrarBoton && <button onClick={agregar} className="comprar-ahora">Comprar ahora</button>}
+        </div>
+
+
         </div>
     )
 }
